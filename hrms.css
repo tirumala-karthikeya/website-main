@@ -1,0 +1,792 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap');
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.gradient {
+    --size: 100vw; /* Use maximum viewport dimension */
+  mix-blend-mode: screen; /* Better color mixing */
+  opacity: 0.7; /* Adjust intensity */
+  --speed: 15s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 5));
+  background-image: linear-gradient(hsl(120, 18%, 92%), hsl(164, 79%, 71%));
+  animation: rotate var(--speed) var(--easing) alternate infinite;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  position: fixed;
+  top: 35%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+@media (min-width: 720px) {
+  .gradient { --size: 500px; }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.01s ease-out;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9) 100%);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+html {
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+    color: #ffffff;
+  }
+  
+  /* MAIN WRAPPER */
+  .page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  
+  /* CONTENT CONTAINER */
+  .content-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10em;
+  }
+  
+  /* LEFT SIDE */
+  .left-side {
+    flex: 1 1 28em;
+    /* min-width: 300px; */
+    margin-left: -1em;
+  }
+  .small-heading {
+    font-size: 18px;
+    font-weight: 500;
+    color: #d3b45f;
+    margin-bottom: 0.8em;
+  }
+  .small-heading1 {
+    font-size: 1em;
+    font-weight: 500;
+    color: #d3d3d3;
+    margin-bottom: none;
+    margin-top: 4em;
+  }
+  
+  /* Header Styles */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    /* border-bottom: 1px solid #F5EFDB; */
+    padding: 1vw 12vw;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #F5EFDB;
+  }
+  
+  .logo-icon svg {
+    width: 2vw;
+    height: 3vh;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .nav-link {
+    color: #F5EFDB;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    opacity: 0.8;
+  }
+  
+  .cta-button2 {
+    background-color: #FAC638;
+    color: #d7cdcc;
+    min-width: 84px;
+    height: 5vh;
+    padding: 0 16px;
+    border-radius: 4vw;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .cta-button2:hover {
+    transform: scale(1.01);
+  }
+  
+  button {
+      height: 2.5em;
+      margin: 5px;
+      width: 7.5em;
+      background: #333;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      cursor: pointer;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border: solid #404c5d 1px;
+      font-size: 0.9em;
+      color: rgb(255, 255, 255);
+      -webkit-transition: 500ms;
+      transition: 200ms;
+      border-radius: 5vw;
+      background: linear-gradient(145deg, #2e2d2d, #212121);
+      -webkit-box-shadow: 
+          -1px -2px 10px rgba(65, 70, 91, 0.6), 
+          2px 2px 12px rgba(65, 70, 91, 0.6),
+          inset 3px 3px 6px #212121, 
+          inset -3px -3px 6px #212121;
+      box-shadow: 
+          -1px -2px 8px rgba(65, 70, 91, 0.6),
+          2px 2px 8px rgba(65, 70, 91, 0.6),
+          inset 3px 3px 6px #212121,
+          inset -3px -3px 6px #212121;
+    }
+    
+    .cta-button:hover {
+      -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
+      box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
+      color: #d6d6d6;
+      -webkit-transition: 500ms;
+      transition: 500ms;
+    }
+    
+    .cta-button:active {
+      -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+      box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+      color: #d6d6d6;
+      -webkit-transition: 100ms;
+      transition: 100ms;
+    }
+    
+  /* HEADING AND SUBTEXT */
+  .main-heading {
+    font-size: 2.5em;
+    font-weight: 500;
+    margin-bottom: 16px;
+    margin-top: 0.2em;
+    margin-right: -1em;
+  }
+  
+  .subtext {
+    font-size: 0.9em;
+    color: #d3b45fe4;
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+  
+  /* STATS GRID (2×2) */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 26px;
+    /* max-width: 500px; */
+    text-align: left; /* Ensure grid items are left-aligned */
+  }
+  
+  .stat {
+    border: none; /* Remove all borders */
+    border-bottom: 0.1em dotted #d3b45fd7; /* Add only bottom dotted border */
+    padding-left: 0.1em;
+    padding-right: 0.3em;
+    padding-bottom: 0.8em;
+    padding-top: 1em;
+    border-radius: 0; /* Remove border radius if needed */
+    text-align: left; /* Left align the content */
+
+  }
+  
+  .stat-label {
+    font-size: 0.95em;
+    margin-bottom: 0.1em;
+    margin-left: none;
+    color: #b9b9b9;
+    text-align: left; /* Left align the label */
+  }
+  
+  .stat-value {
+    font-size: 3em;
+    font-weight: 700;
+    color: #eaeaeade;
+    margin-bottom: 0.1em;
+    margin-top: 0.2em;
+    text-align: left; /* Left align the value */
+  }
+  
+  
+  /* RIGHT SIDE */
+  .right-side {
+    flex: 1 1 38em;
+    /* min-width: 30em; */
+  }
+  
+  /* IMAGE COLUMNS CONTAINER */
+  .image-columns {
+    display: flex;
+    gap: 3em;
+    margin-top: 2em;
+    margin-right: none;
+    margin-bottom: 1em;
+    margin-left: 3em;
+  }
+  
+  /* Individual column styling */
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    flex: 1;
+    margin-top: -1em;
+  }
+  
+  /* Shift one column down (right column in this case) */
+  .left-column {
+    margin-top: 4em; /* Adjust the shift amount as desired */
+  }
+  /* Each image is a square with background */
+  .image {
+    width: 100%;
+    padding-top: 100%; /* Forces square aspect ratio */
+    border-radius: 8px;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  /* Background images */
+  .bg-image-1 {
+    background-image: url("https://cdn.usegalileo.ai/sdxl10/4aad712e-3ba0-4da3-a597-096eb04f0c06.png");
+  }
+  .bg-image-2 {
+    background-image: url("https://cdn.usegalileo.ai/sdxl10/cb9b93a3-6fdf-4a89-9535-8174290ad925.png");
+  }
+  .bg-image-3 {
+    background-image: url("https://cdn.usegalileo.ai/sdxl10/e04ae18b-daf8-474f-bd4b-9130691aa78a.png");
+  }
+  .bg-image-4 {
+    background-image: url("https://cdn.usegalileo.ai/sdxl10/ebcaa173-53a2-4b5e-9e9c-3148ca876957.png");
+  }
+  .industries-wrapper {
+    position: relative;
+    /* padding-bottom: 70%;  This extra space forces the sticky element to scroll up after 90% of the container */
+  }
+  /* INDUSTRIES LIST (Fixed on scroll) */
+  .industries {
+    position: sticky;
+    top: 5em; /* Adjust the top offset as needed */
+   margin-left: -1em;
+   margin-right: 3em;
+   margin-top: 3em;
+   margin-bottom: 10em;
+    border-radius: 8px;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+  
+  
+  .industries ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .industries li {
+    font-size: 0.8em;
+    font-weight: 500;
+    white-space: nowrap;
+    
+  }
+  .industry-link {
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  
+  
+  .see-all {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #d3b45f;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .content-container {
+      flex-direction: column;
+    }
+    .industries {
+      position: static;
+      transform: none;
+      margin-top: 20px;
+    }
+    .image-columns {
+      flex-direction: column;
+      margin: 2em 0;
+    }
+    .right-column {
+      margin-top: 0;
+    }
+    
+  }
+  @media (max-width: 1300px) {
+    .industries{
+        display: none;
+    }
+    
+  }
+/* Container for the entire Key Functions section */
+.key-functions {
+    margin-top: 3em; /* Space above this section */
+  }
+  
+  /* Heading for the entire section */
+  .section-heading {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #FAC638;
+    margin-bottom: 3em;
+    text-align: left; /* Change to 'center' if you want it centered */
+  }
+  
+  /* 2×2 Grid for the boxes */
+  .function-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em; /* Space between boxes */
+  }
+  
+  /* Each rectangular box */
+  .function-box {
+    background: #1a1a1a; /* Dark background to stand out */
+    border-radius: 1.6em;
+    padding: 1.5em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  
+  .function-title {
+    display: block;
+    width: 100%;
+    background-color: #f7c64120; /* Example background color */
+    color: #e2bc54fd;               /* Text color that contrasts with background */
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1em;             /* Adjust spacing as desired */
+    margin-bottom: 1em;
+    border-radius: 0.9em;       /* Rounded corners */
+    box-sizing: border-box;   /* Ensures padding is included in the width */
+    text-align: left;       /* Centers the text within the pill */
+  }
+  
+  
+  /* Subtext under the title */
+  .function-subtext {
+    font-size: 1rem;
+    color: #d3b45fbc;
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  
+  /* List styling */
+  .function-list {
+    list-style: none;
+    padding: 0;
+    margin-left: 0.9em;
+  }
+  
+  .function-list li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.5em;
+    color: #d3b45fce;
+  }
+  
+  /* Optional: add a custom bullet or icon for each list item */
+  .function-list li::before {
+    content: "•"; /* Simple bullet */
+    position: absolute;
+    left: 0;
+    color: #FAC638; /* Different color for bullet */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .function-grid {
+      grid-template-columns: 1fr; /* Stack the boxes in one column */
+    }
+  }
+/************************************
+ * Quant Offerings Section
+ ************************************/
+
+/* Full section wrapper */
+.quant-offerings {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center everything vertically */
+    padding: 4em 2em; /* Add space around the section */
+    text-align: center; /* Ensure text is well-centered */
+    margin-top: 10em;
+  }
+  
+  /* Container to keep everything neatly aligned */
+  .offerings-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px; /* Ensures it doesn’t get too wide */
+    width: 100%;
+  }
+  
+  /* Heading */
+  .offerings-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fac638; /* Golden-yellow */
+    margin-bottom: 2rem;
+  }
+  
+  /* Align text and image side by side */
+  .offerings-text {
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  
+  /* Each offering item */
+  .offering-item {
+    margin-bottom: 2.5em;
+  }
+  
+  /* Offering title */
+  .offering-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #eaeaea;
+    margin-bottom: 0.5em;
+  }
+  .offering-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  /* Style for the offering icon */
+  .offering-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /* Description text */
+  .offering-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d3b45f;
+    max-width: 500px;
+    margin: 0 auto; /* Centers text */
+  }
+  
+  /* Image container */
+  .offerings-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    
+  }
+  
+  /* Rounded image styling */
+  .offerings-rounded-img {
+    width: 100%;
+    max-width: 400px; /* Ensures image doesn’t get too big */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Responsive: Adjusts layout for wider screens */
+  @media (min-width: 768px) {
+    .offerings-container {
+      flex-direction: row; /* Side-by-side layout */
+      justify-content: center;
+      align-items: center;
+      gap: 3rem; /* Space between text & image */
+      text-align: left; /* Aligns text properly */
+    }
+  
+    .offerings-text {
+      max-width: 50%;
+      text-align: left; /* Ensures text is aligned left */
+    }
+  
+    .offerings-image {
+      margin-top: 0;
+    }
+  }
+  
+  
+  /* New CTA Section Styles */
+/*********************************************
+ * Defense & Security Section (Replicates Screenshot)
+ *********************************************/
+ .section1 {
+  position: relative;
+  margin-top: 6em;
+  margin-bottom: 6em;
+  /* Background image (optional): 
+     replace with your own or remove if you want a solid color. */
+  padding: 60px 20px;  /* Space around the section content */
+  color: #fff;         /* Text color for dark background */
+  overflow: hidden;    /* Ensures overlay & content display properly */
+}
+
+/* Dark overlay to ensure text is readable */
+.bg-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  
+}
+
+/* Container for the main content, centered and layered above the overlay */
+.content {
+  position: relative;
+  z-index: 2;  /* Above the overlay */
+  max-width: 1000px;
+  margin: 0 auto;  /* Center horizontally */
+  text-align: center;  /* Center all text */
+}
+
+/* Small heading (e.g. “Supercharge your operations”) */
+.small-heading2 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #d3b45f;  /* Subtle gold color, adjust as needed */
+}
+
+/* Main heading (e.g. “Transform Your Defense and Security Operations...”) */
+.main-heading1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+/* Paragraph describing the offering */
+.subtext {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  color: #eaeaea;
+}
+
+/* Benefits grid: 3 columns in a row, 2 rows total */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Each benefit item (bullet point) */
+.benefit-item {
+  background: rgba(31, 30, 30, 0.3); /* Slightly distinct background */
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+/* Benefit item heading */
+.benefit-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #FAC638; /* Highlight color for headings */
+}
+
+/* Benefit item description */
+.benefit-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #d3d3d3;
+}
+
+/* Responsive: stack columns on smaller screens */
+@media (max-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .benefits-grid {
+    grid-template-columns: 1fr; /* 1 column for mobile */
+  }
+}
+
+  
+  /* Modified Footer Styles */
+  .footer {
+    background: rgba(7, 4, 4, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(20px);   
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    padding: 60px 40px;
+  }
+  
+  
+  .footer-content {
+    max-width: 1400px;
+margin-top: 0; 
+margin-left: 14vw; 
+  display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    justify-items: center;
+  }
+  
+  .footer-left {
+    max-width: 300px;
+  }
+  
+  .company-name {
+    font-size: 1.8rem;
+    color: #FAC638;
+    margin-bottom: 20px;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+    opacity: 1;
+    color:#f2f2f2;
+  }
+  
+  .footer-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  
+  .footer-column {
+    text-align: left;
+  }
+  
+  .footer-heading {
+    color: #FAC638;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+  
+  .footer-links a {
+    color: #F5EFDB;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 1024px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-left: 14vw; /* Preserve original left margin */
+    }
+    .content-container{
+        width: 100vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .footer-right {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cta-section {
+      padding: 60px 20px;
+    }
+    
+    .cta-title {
+      font-size: 2rem;
+    }
+    
+    .cta-subtitle {
+      font-size: 1.5rem;
+    }
+    
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-left: 14vw; /* Preserve original left margin */
+    }
+    
+    .footer-right {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-column {
+      text-align: center;
+    }
+    
+    /* Stack images vertically on mobile view */
+    .image-columns {
+      flex-direction: column;
+    }
+  }
+  
